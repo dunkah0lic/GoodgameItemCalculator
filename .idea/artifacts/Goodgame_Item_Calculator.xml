@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Goodgame Item Calculator">
+    <output-path>$PROJECT_DIR$/out/artifacts/Goodgame_Item_Calculator</output-path>
+    <root id="archive" name="Goodgame Item Calculator.jar">
+      <element id="module-output" name="Goodgame Item Calculator" />
+    </root>
+  </artifact>
+</component>
