@@ -81,7 +81,7 @@ public class AddItemDialog extends JDialog {
             }
         });
 
-// call onCancel() when cross is clicked
+        // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -89,7 +89,7 @@ public class AddItemDialog extends JDialog {
             }
         });
 
-// call onCancel() on ESCAPE
+        // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
@@ -160,8 +160,9 @@ public class AddItemDialog extends JDialog {
 
         }
 
-        System.out.println("name " + item.getName() + "       " + item.getPars()[0] + "         " + item.getPars()[1] + "       " + item.getPars()[2] + "          " + item.getPars()[3] + "         " + item.getPars()[4] + "          " + item.getPars()[5] + "          " + item.getPars()[6] + "          " + item.getPars()[7]);
-// add your code here
+        System.out.println("name " + item.getName() + "       " + item.getPars()[0] + "         " + item.getPars()[1] + "       " + item.getPars()[2] + "          " + item.getPars()[3]
+                + "         " + item.getPars()[4] + "          " + item.getPars()[5] + "          " + item.getPars()[6] + "          " + item.getPars()[7]);
+
         dispose();
     }
 

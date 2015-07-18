@@ -14,9 +14,6 @@ public class CalculatorDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JComboBox par1CB;
-    private JComboBox par3CB;
-    private JComboBox par2CB;
     private JTextField value1TF;
     private JTextField value2TF;
     private JTextField value3TF;
@@ -125,8 +122,6 @@ public class CalculatorDialog extends JDialog {
             default:
                 break;
         }
-        //ArrayList<ArrayList<Item>> results = Calculator.select(itemList, limits);
-
 
         String resultString = "";
         for (ArrayList<Item> list: results) {
@@ -154,7 +149,7 @@ public class CalculatorDialog extends JDialog {
                 for (Map.Entry<Integer,Float> entry: limits.entrySet()){
                     tempString = tempString +  " " + String.format("%.1f", item.getPars()[entry.getKey()]);
                 }
-                resultString = resultString + tempString + "\n";//resultString + String.format("%-30s",tempString) + " " + String.format("%.1f", item.getPars()[par1]) + " " + String.format("%.1f", item.getPars()[par2]) + " " + String.format("%.1f", item.getPars()[par3]) + "\n";
+                resultString = resultString + tempString + "\n";
             }
             resultString = resultString + "\n";
         }

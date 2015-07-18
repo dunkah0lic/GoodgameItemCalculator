@@ -9,8 +9,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 /**
@@ -27,6 +29,8 @@ public class UI extends JFrame implements TableModelListener {
     private ItemTableModel itemTableModel;
     private XStream xStream;
     private String xml;
+    InputStream inputStream = null;
+    Reader reader = null;
 
     public UI() {
 
@@ -38,19 +42,14 @@ public class UI extends JFrame implements TableModelListener {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
-        xml = null;
-        try{
-            xml = new String(Files.readAllBytes(Paths.get("items.xml")));
-        } catch (IOException e){
-
-        }
         xStream = new XStream();
         xStream.alias("items", ItemList.class);
         xStream.alias("item", Item.class);
         xStream.alias("parameter", Parameter.class);
         xStream.addImplicitCollection(ItemList.class, "list");
 
-        itemList = (ArrayList<Item>)xStream.fromXML(xml);
+        readFromXML();
+
         ArrayList<String> itemColumns = new ArrayList<String>();
         itemColumns.add("Имя");
         itemColumns.add("Одето");
@@ -78,12 +77,7 @@ public class UI extends JFrame implements TableModelListener {
                 dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
                 dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
                 dialog.setVisible(true);
-                try{
-                    xml = new String(Files.readAllBytes(Paths.get("items.xml")));
-                } catch (IOException e1){
-
-                }
-                itemList = (ArrayList<Item>)xStream.fromXML(xml);
+                readFromXML();
                 updateItemList();
             }
         });
@@ -93,12 +87,7 @@ public class UI extends JFrame implements TableModelListener {
                 dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
                 dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
                 dialog.setVisible(true);
-                try{
-                    xml = new String(Files.readAllBytes(Paths.get("items.xml")));
-                } catch (IOException e1){
-
-                }
-                itemList = (ArrayList<Item>)xStream.fromXML(xml);
+                readFromXML();
                 updateItemList();
             }
         });
@@ -108,17 +97,22 @@ public class UI extends JFrame implements TableModelListener {
                 dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
                 dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
                 dialog.setVisible(true);
-                /*try{
-                    xml = new String(Files.readAllBytes(Paths.get("items.xml")));
-                } catch (IOException e1){
 
-                }
-                itemList = (ArrayList<Item>)xStream.fromXML(xml);
-                updateItemList();*/
             }
         });
 
     }
+
+    private void readFromXML(){
+        try{
+            inputStream = new java.io.FileInputStream("items.xml");
+            reader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
+        } catch (IOException e){
+
+        }
+        itemList = (ArrayList<Item>)xStream.fromXML(reader);
+    }
+
 
     private void deleteItem(int itemNumber){
         itemList.remove(itemNumber);
@@ -144,7 +138,6 @@ public class UI extends JFrame implements TableModelListener {
         int column = e.getColumn();
         System.out.println(row + " " + column);
         TableModel model = (TableModel)e.getSource();
-        //String columnName = model.getColumnName(column);
         Object data = model.getValueAt(row, column);
         if (column>-1) {
 
