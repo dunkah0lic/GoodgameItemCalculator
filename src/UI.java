@@ -30,7 +30,7 @@ public class UI extends JFrame implements TableModelListener {
 
     public UI() {
 
-        setTitle("База шмоток");
+        setTitle("База экипировки");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1041, 741);
         JPanel contentPane = panel1;
@@ -53,7 +53,7 @@ public class UI extends JFrame implements TableModelListener {
         itemList = (ArrayList<Item>)xStream.fromXML(xml);
         ArrayList<String> itemColumns = new ArrayList<String>();
         itemColumns.add("Имя");
-        itemColumns.add("Место");
+        itemColumns.add("Одето");
         itemColumns.add("Уровень");
         itemColumns.add("Макс. ур.");
         itemColumns.add("Параметр 1");
@@ -62,13 +62,13 @@ public class UI extends JFrame implements TableModelListener {
         itemColumns.add("Слот");
         itemTableModel = new ItemTableModel(itemList, itemColumns);
 
-        itemsTable.setModel(itemTableModel);// = new JTable(itemTableModel);
+        itemsTable.setModel(itemTableModel);
         itemsTable.getModel().addTableModelListener(this);
 
 
         deleteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int itemNumber = itemsTable.getSelectedRow();//.getValueAt(studentTable.getSelectedRow(), 0);
+                int itemNumber = itemsTable.getSelectedRow();
                 deleteItem(itemNumber);
             }
         });
@@ -146,11 +146,29 @@ public class UI extends JFrame implements TableModelListener {
         TableModel model = (TableModel)e.getSource();
         //String columnName = model.getColumnName(column);
         Object data = model.getValueAt(row, column);
+        if (column>-1) {
 
-        if(column==2) {
             Item old = itemTableModel.modelData.get(row);
-            Item item = new Item(old.getPlacement(), (Integer) data, old.getPar1(), old.getPar2(), old.getPar3(), old.getName(), old.isEquipped());
-            System.out.println("name " + item.getName() + "       " + item.getPars()[0] + "         " + item.getPars()[1] + "       " + item.getPars()[2] + "          " + item.getPars()[3] + "         " + item.getPars()[4] + "          " + item.getPars()[5] + "          " + item.getPars()[6] + "          " + item.getPars()[7]);
+            Item item = null;
+
+            switch (column) {
+                case 0:
+                    item = new Item(old.getPlacement(), old.getPar1().getLevel(), old.getPar1(), old.getPar2(), old.getPar3(), data.toString(), old.isEquipped());
+                    System.out.println("name " + item.getName() + "       " + item.getPars()[0] + "         " + item.getPars()[1] + "       " + item.getPars()[2] + "          " + item.getPars()[3]
+                            + "         " + item.getPars()[4] + "          " + item.getPars()[5] + "          " + item.getPars()[6] + "          " + item.getPars()[7]);
+                    break;
+                case 1:
+                    item = new Item(old.getPlacement(), old.getPar1().getLevel(), old.getPar1(), old.getPar2(), old.getPar3(), old.getName(), (Boolean) data);
+                    System.out.println("name " + item.getName() + "       " + item.getPars()[0] + "         " + item.getPars()[1] + "       " + item.getPars()[2] + "          " + item.getPars()[3]
+                            + "         " + item.getPars()[4] + "          " + item.getPars()[5] + "          " + item.getPars()[6] + "          " + item.getPars()[7]);
+                    break;
+                case 2:
+                    item = new Item(old.getPlacement(), (Integer) data, old.getPar1(), old.getPar2(), old.getPar3(), old.getName(), old.isEquipped());
+                    System.out.println("name " + item.getName() + "       " + item.getPars()[0] + "         " + item.getPars()[1] + "       " + item.getPars()[2] + "          " + item.getPars()[3]
+                            + "         " + item.getPars()[4] + "          " + item.getPars()[5] + "          " + item.getPars()[6] + "          " + item.getPars()[7]);
+                    break;
+            }
+
             itemList.remove(row);
             itemList.add(row, item);
             itemTableModel.updateModel(itemList);
@@ -158,11 +176,11 @@ public class UI extends JFrame implements TableModelListener {
 
             String xml1 = xStream.toXML(itemList);
 
-            try{
+            try {
                 java.io.FileWriter fw = new java.io.FileWriter("items.xml");
                 fw.write(xml1);
                 fw.close();
-            } catch (IOException ex){
+            } catch (IOException ex) {
 
             }
         }

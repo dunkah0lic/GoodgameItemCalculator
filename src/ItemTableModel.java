@@ -79,9 +79,16 @@ public class ItemTableModel extends AbstractTableModel {
 
     public boolean isCellEditable(int row, int col)
     { return true; }
+
     public void setValueAt(Object value, int row, int col) {
         switch (col){
+            case 0: modelData.get(row).setName(value.toString());
+                break;
+            case 1: modelData.get(row).setEquipped( (Boolean) value);
+                break;
             case 2: modelData.get(row).getPar1().setLevel(Integer.valueOf(value.toString()));
+                break;
+
         }
         fireTableCellUpdated(row, col);
 
@@ -94,9 +101,9 @@ public class ItemTableModel extends AbstractTableModel {
             case 0: result = modelData.get(row).getName();
                 break;
             case 1: if (modelData.get(row).isEquipped()){
-                result = "Одето";
+                result = true;//"Одето";
             } else {
-                result = "На складе";
+                result = false;//"На складе";
             }
                 break;
             case 2: result = modelData.get(row).getPar1().getLevel();
@@ -117,8 +124,11 @@ public class ItemTableModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int col){
-        return columnNames.get(col);//
+        return columnNames.get(col);
+    }
 
+    public Class getColumnClass(int c) {
+        return getValueAt(0, c).getClass();
     }
 
     public ItemTableModel(List<Item> data, List<String> col){

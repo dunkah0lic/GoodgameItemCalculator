@@ -3,51 +3,6 @@
     <placement>2</placement>
     <par1>
       <kind>0</kind>
-      <value>27.0</value>
-      <initValue>15.0</initValue>
-      <level>1</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.8</increment>
-    </par1>
-    <par2>
-      <kind>3</kind>
-      <value>25.0</value>
-      <initValue>22.0</initValue>
-      <level>1</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.2</increment>
-    </par2>
-    <par3>
-      <kind>13</kind>
-      <value>14.0</value>
-      <initValue>11.0</initValue>
-      <level>1</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.2</increment>
-    </par3>
-    <name>ТЕСТ</name>
-    <pars>
-      <float>27.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>25.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>14.0</float>
-    </pars>
-    <equipped>true</equipped>
-  </item>
-  <item>
-    <placement>2</placement>
-    <par1>
-      <kind>0</kind>
       <value>21.2</value>
       <initValue>10.0</initValue>
       <level>0</level>
@@ -87,85 +42,40 @@
       <float>0.0</float>
       <float>0.0</float>
     </pars>
-    <equipped>true</equipped>
-  </item>
-  <item>
-    <placement>0</placement>
-    <par1>
-      <kind>1</kind>
-      <value>15.0</value>
-      <initValue>15.0</initValue>
-      <level>0</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.0</increment>
-    </par1>
-    <par2>
-      <kind>2</kind>
-      <value>21.5</value>
-      <initValue>21.5</initValue>
-      <level>0</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.0</increment>
-    </par2>
-    <par3>
-      <kind>3</kind>
-      <value>15.0</value>
-      <initValue>15.0</initValue>
-      <level>0</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.0</increment>
-    </par3>
-    <name>ывыукфцу</name>
-    <pars>
-      <float>0.0</float>
-      <float>15.0</float>
-      <float>21.5</float>
-      <float>15.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-    </pars>
     <equipped>false</equipped>
   </item>
   <item>
     <placement>0</placement>
     <par1>
       <kind>0</kind>
-      <value>10.5</value>
-      <initValue>10.5</initValue>
+      <value>18.8</value>
+      <initValue>10.0</initValue>
       <level>5</level>
       <maxLevel>16</maxLevel>
-      <increment>0.0</increment>
+      <increment>0.8</increment>
     </par1>
     <par2>
       <kind>3</kind>
-      <value>11.8</value>
-      <initValue>11.8</initValue>
+      <value>15.4</value>
+      <initValue>11.0</initValue>
       <level>5</level>
       <maxLevel>16</maxLevel>
-      <increment>0.0</increment>
+      <increment>0.4</increment>
     </par2>
     <par3>
       <kind>3</kind>
-      <value>23.5</value>
-      <initValue>23.5</initValue>
+      <value>27.4</value>
+      <initValue>23.0</initValue>
       <level>5</level>
       <maxLevel>16</maxLevel>
-      <increment>0.0</increment>
+      <increment>0.4</increment>
     </par3>
     <name>Очередной тест</name>
     <pars>
-      <float>10.5</float>
+      <float>18.8</float>
       <float>0.0</float>
       <float>0.0</float>
-      <float>35.3</float>
+      <float>42.8</float>
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
@@ -219,49 +129,6 @@
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
-    </pars>
-    <equipped>false</equipped>
-  </item>
-  <item>
-    <placement>0</placement>
-    <par1>
-      <kind>0</kind>
-      <value>22.8</value>
-      <initValue>10.0</initValue>
-      <level>0</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.8</increment>
-    </par1>
-    <par2>
-      <kind>0</kind>
-      <value>16.4</value>
-      <initValue>10.0</initValue>
-      <level>0</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.4</increment>
-    </par2>
-    <par3>
-      <kind>0</kind>
-      <value>16.4</value>
-      <initValue>10.0</initValue>
-      <level>0</level>
-      <maxLevel>16</maxLevel>
-      <increment>0.4</increment>
-    </par3>
-    <name>ыфвфыв</name>
-    <pars>
-      <float>55.6</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
-      <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
     </pars>
@@ -293,7 +160,7 @@
       <maxLevel>20</maxLevel>
       <increment>0.3</increment>
     </par3>
-    <name>klkj</name>
+    <name>Test</name>
     <pars>
       <float>63.3</float>
       <float>53.5</float>
@@ -307,8 +174,10 @@
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
+      <float>0.0</float>
+      <float>0.0</float>
     </pars>
-    <equipped>false</equipped>
+    <equipped>true</equipped>
   </item>
   <item>
     <placement>2</placement>
@@ -336,7 +205,7 @@
       <maxLevel>20</maxLevel>
       <increment>0.4</increment>
     </par3>
-    <name>454545</name>
+    <name>Test 1</name>
     <pars>
       <float>67.7</float>
       <float>0.0</float>
@@ -350,8 +219,10 @@
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
+      <float>0.0</float>
+      <float>0.0</float>
     </pars>
-    <equipped>false</equipped>
+    <equipped>true</equipped>
   </item>
   <item>
     <placement>3</placement>
@@ -393,6 +264,8 @@
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
+      <float>0.0</float>
+      <float>0.0</float>
     </pars>
     <equipped>false</equipped>
   </item>
@@ -425,6 +298,8 @@
     <name>hjkk</name>
     <pars>
       <float>54.0</float>
+      <float>0.0</float>
+      <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
@@ -479,8 +354,10 @@
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
+      <float>0.0</float>
+      <float>0.0</float>
     </pars>
-    <equipped>false</equipped>
+    <equipped>true</equipped>
   </item>
   <item>
     <placement>2</placement>
@@ -518,6 +395,8 @@
       <float>0.0</float>
       <float>25.2</float>
       <float>17.6</float>
+      <float>0.0</float>
+      <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
@@ -565,8 +444,10 @@
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
+      <float>0.0</float>
+      <float>0.0</float>
     </pars>
-    <equipped>false</equipped>
+    <equipped>true</equipped>
   </item>
   <item>
     <placement>1</placement>
@@ -608,8 +489,10 @@
       <float>0.0</float>
       <float>0.0</float>
       <float>0.0</float>
+      <float>0.0</float>
+      <float>0.0</float>
     </pars>
-    <equipped>false</equipped>
+    <equipped>true</equipped>
   </item>
   <item>
     <placement>0</placement>
